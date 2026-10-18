@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI.ngel | Watches the patient. Reports what matters.</title>
+<meta name="description" content="AI.ngel is an AI-based patient monitoring and alert eco-system: a camera, a wrist band and sensors, thinking together, 24/7. Not a diagnostic tool.">
+<meta name="theme-color" content="#060f24">
+<link rel="canonical" href="https://ai-ngel.live/">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai-ngel.live/">
+<meta property="og:title" content="AI.ngel | Watches the patient. Reports what matters.">
+<meta property="og:description" content="A camera, a wrist band and sensors, thinking together, 24/7. An AI-based patient monitoring and alert eco-system.">
+<meta property="og:image" content="https://ai-ngel.live/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="vendor/phosphor/style.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="stage-fallback" id="stage-fallback" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="AI.ngel home">
+    <img src="assets/logo.svg" width="34" height="34" alt="">
+    <span>AI<i>.</i>ngel</span>
+  </a>
+  <nav aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#app">The app</a>
+    <a href="#features">Features</a>
+    <a href="#doctor">Doctor care</a>
+    <a href="#future">Coming next</a>
+  </nav>
+  <a class="btn btn-solid" href="#demo">Ask for a demo</a>
+</header>
+
+<main id="main">
+
+  <section class="sec hero" id="top" data-cam="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Watches the patient. <span>Reports what matters.</span></h1>
+        <p class="lede">An AI-based patient monitoring and alert eco-system for home and ward care, working 24/7.</p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="#demo">Ask for a demo</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="system" data-cam="system">
+    <div class="wrap">
+      <div class="panel reveal">
+        <h2>A camera, a wrist band and sensors, thinking together.</h2>
+        <p>AI.ngel watches over a patient or an elder and tells the concerned person only what matters. It is a prototype and not a diagnostic tool.</p>
+        <ul class="parts">
+          <li><i class="ph ph-video-camera"></i><div><b>A camera</b><span>Mounted on the ceiling above the chest, angled 45 degrees down at the face. It watches 24/7.</span></div></li>
+          <li><i class="ph ph-watch"></i><div><b>A wrist band</b><span>Keeps an eye on heart rate, SpO2 and wrist temperature.</span></div></li>
+          <li><i class="ph ph-drop"></i><div><b>Sensors for the drip line and urine bag</b><span>Low drip bag and full urine bag, reported without a nurse checking. In development.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec how" id="how" data-cam="cam">
+    <div class="wrap">
+      <div class="panel reveal right">
+        <h2>The camera looks at the face, not at the room.</h2>
+        <p>It reads unusual movement and signs of pain, such as a hand held on the chest. Video and faces never leave the AI computer.</p>
+        <div class="angle"><b>45&deg;</b><span>from the ceiling above the chest to the patient's face</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="sensors" data-cam="sensors">
+    <div class="wrap">
+      <div class="panel reveal right">
+        <h2>Sensors feed the vitals in.</h2>
+        <p>The wrist band, the drip line sensor and the urine bag sensor send their readings to the AI computer, all on your own Wi-Fi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="brain" data-cam="brain">
+    <div class="wrap">
+      <div class="panel reveal right">
+        <h2>The AI computer decides.</h2>
+        <p>It processes every input together, the camera and the sensors, and gives out alerts to suit the situation. It runs at the bedside, with no cloud processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="alarms" data-cam="alarm">
+    <div class="wrap">
+      <div class="panel reveal right">
+        <h2>No false panic.</h2>
+        <p>Movement alone sends only a gentle alert. The alarm sounds when the camera sees something unusual and the vitals change too.</p>
+        <ol class="ladder">
+          <li><i class="ph ph-bell-simple"></i><div><b>Gentle alert</b><span>The camera sees movement. The vitals look normal.</span></div></li>
+          <li><i class="ph ph-warning"></i><div><b>Alarm</b><span>Something unusual and the vitals change together.</span></div></li>
+          <li><i class="ph ph-heartbeat"></i><div><b>Alarm at once</b><span>The vitals themselves turn critical.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec appdemo" id="app" data-cam="wide2">
+    <div class="wrap demo-grid">
+      <div class="demo-copy reveal">
+        <h2>The family app, working.</h2>
+        <p>Tap through a night with AI.ngel. This is a prototype of the real iPhone and Android app, running on demo footage and demo vitals.</p>
+        <ol class="story" id="story" role="tablist" aria-label="App demo steps">
+          <li><button type="button" role="tab" data-step="calm" aria-selected="true"><b>All is well</b><span>Camera and band checked together.</span></button></li>
+          <li><button type="button" role="tab" data-step="req" aria-selected="false"><b>Patient asks for water</b><span>A hand sign, no words needed.</span></button></li>
+          <li><button type="button" role="tab" data-step="alert" aria-selected="false"><b>Alarm</b><span>Hand on chest and heart rate change together.</span></button></li>
+          <li><button type="button" role="tab" data-step="act" aria-selected="false"><b>Activity log</b><span>Every request and alert, in order.</span></button></li>
+        </ol>
+        <div class="demo-actions">
+          <button type="button" class="btn btn-solid" id="play"><i class="ph ph-play"></i><span>Play the night</span></button>
+        </div>
+        <div class="sees" id="sees" aria-live="polite">
+          <h3>What the AI computer sees</h3>
+          <ul id="sees-list"></ul>
+        </div>
+      </div>
+
+      <div class="phone-wrap reveal">
+        <div class="phone" id="phone">
+          <div class="phone-screen" id="phone-screen">
+            <div class="scr" id="scr-main">
+              <div class="scr-scroll" id="scr-scroll">
+                <div class="scr-stack" id="scr-stack">
+                  <img id="scr-img" src="assets/app-calm.webp" alt="The AI.ngel family app home screen showing All is well, the bedside camera and the vitals" width="780" height="1633" decoding="async">
+                  <div class="cam-live" id="cam-live" aria-label="Bedside camera with face tracking, demo footage">
+                    <canvas id="cam-canvas"></canvas>
+                    <span class="pill pill-l"><i></i>Bedside camera</span>
+                    <span class="pill pill-r">Demo footage</span>
+                    <span class="track-tag" id="track-tag">Face found</span>
+                  </div>
+                  <button type="button" class="hot hot-done" id="hot-done" aria-label="Mark the water request as done"></button>
+                </div>
+              </div>
+              <div class="scr-nav" id="scr-nav">
+                <img id="nav-img" src="assets/nav-calm.webp" alt="" width="780" height="130">
+                <button type="button" class="hot nav-home" data-go="calm" aria-label="Home"></button>
+                <button type="button" class="hot nav-act" data-go="act" aria-label="Activity"></button>
+              </div>
+            </div>
+            <div class="scr scr-alert" id="scr-alert" hidden>
+              <img src="assets/app-alert.webp" alt="The AI.ngel emergency alert screen: Check on them now" width="780" height="1454" decoding="async">
+              <button type="button" class="hot a-call" id="a-call" aria-label="Call ambulance"></button>
+              <button type="button" class="hot a-way" id="a-way" aria-label="I am on my way"></button>
+              <button type="button" class="hot a-ok" id="a-ok" aria-label="It is sorted out"></button>
+            </div>
+            <div class="toast" id="toast" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="phone-note">Demo footage is an AI-generated stand-in. Nothing here is a real patient.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec features" id="features" data-cam="wide">
+    <div class="wrap">
+      <h2 class="big reveal">Made for the long night shift of care.</h2>
+      <div class="bento">
+        <article class="cell c-pain reveal">
+          <i class="ph ph-heart"></i>
+          <h3>Notices pain signs</h3>
+          <p>A hand held on the chest, or unusual movement, is picked up and checked against the vitals before anyone is alarmed.</p>
+        </article>
+        <article class="cell c-ask reveal">
+          <i class="ph ph-hand-waving"></i>
+          <h3>Ask without words</h3>
+          <p>Thumbs up for water. Open palm for help. Two fingers for the bathroom.</p>
+        </article>
+        <article class="cell c-24 reveal">
+          <i class="ph ph-moon-stars"></i>
+          <h3>Watching 24/7</h3>
+          <p>Day, night, and the quiet hours between.</p>
+        </article>
+        <article class="cell c-app reveal">
+          <i class="ph ph-device-mobile"></i>
+          <h3>Family app</h3>
+          <p>Live camera and alerts on iPhone and Android. One tap calls the ambulance or informs the doctor. The app never dials by itself.</p>
+        </article>
+        <article class="cell c-priv reveal">
+          <i class="ph ph-shield-check"></i>
+          <h3>Private by design</h3>
+          <p>Video and faces stay on the AI computer. It works on your own Wi-Fi, with no cloud processing.</p>
+        </article>
+        <article class="cell c-rep reveal">
+          <i class="ph ph-file-text"></i>
+          <h3>Reports</h3>
+          <p>Day-to-month reports, in PDF or CSV.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="doctor" data-cam="doctor">
+    <div class="wrap">
+      <div class="panel reveal">
+        <h2>Doctor care from the app.</h2>
+        <ul class="parts">
+          <li><i class="ph ph-stethoscope"></i><div><b>Checks the patient anytime</b><span>From the app, with alerts and in-app calls.</span></div></li>
+          <li><i class="ph ph-chart-line"></i><div><b>Reads the whole day's report</b><span>Including the ECG report, shared by the family.</span></div></li>
+          <li><i class="ph ph-ear"></i><div><b>Listens through a digital stethoscope</b><span>Connected to the app. <em>Coming soon</em></span></div></li>
+        </ul>
+        <p class="small">The doctor is told only when the family asks for a review. Alarms are never sent to a doctor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec future" id="future" data-cam="future">
+    <div class="wrap">
+      <div class="panel wide reveal right">
+        <h2>What we are building next.</h2>
+        <div class="soon">
+          <div><i class="ph ph-heartbeat"></i><b>Mini ECG</b><span>Heart rhythm for the doctor.</span></div>
+          <div><i class="ph ph-stethoscope"></i><b>Digital stethoscope</b><span>The doctor listens in the app.</span></div>
+          <div><i class="ph ph-gauge"></i><b>Blood pressure monitoring</b><span>Readings flow in on their own.</span></div>
+          <div><i class="ph ph-drop-half"></i><b>Blood sugar monitoring</b><span>Readings flow in on their own.</span></div>
+          <div><i class="ph ph-flask"></i><b>Drip line sensor</b><span>Alerts when the glucose bag runs low.</span></div>
+          <div><i class="ph ph-test-tube"></i><b>Urine bag sensor</b><span>Tells you when the bag is full.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec demo" id="demo" data-cam="end">
+    <div class="wrap">
+      <div class="panel demo-panel reveal">
+        <h2>See it working.</h2>
+        <p>Tell us a little about the patient and who is caring for them. We will reply by email with a time for a live demo.</p>
+        <form name="demo" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" id="demo-form" novalidate>
+          <input type="hidden" name="form-name" value="demo">
+          <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-contact">Email or phone</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-note">What would you like to see?</label>
+            <textarea id="f-note" name="note" rows="3"></textarea>
+          </div>
+          <button class="btn btn-solid" type="submit">Send request</button>
+          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+        <p class="small">Or write to <a href="mailto:testarchitroneapp@gmail.com">testarchitroneapp@gmail.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="#top"><img src="assets/logo.svg" width="28" height="28" alt=""><span>AI<i>.</i>ngel</span></a>
+    <p>Prototype for research demonstration. AI.ngel assists monitoring. It is not a diagnostic tool and does not replace a doctor or nurse. Future items are in development.</p>
+  </div>
+</footer>
+
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
