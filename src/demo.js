@@ -26,7 +26,8 @@ export function initDemo({ reduced }) {
   const pic = new Image();
   let mesh = null;
   pic.src = "assets/demo-cam.jpg";
-  const meshReady = fetch("assets/face-mesh.json").then((r) => r.json()).then((m) => { mesh = m; }).catch(() => {});
+  mesh = window.__FACE_MESH || null; // loaded by assets/face-mesh.js (no fetch, so it also works from a double-clicked file)
+  const meshReady = Promise.resolve();
   const ctx = canvas.getContext("2d");
 
   function fit() {

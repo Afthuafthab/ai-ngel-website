@@ -1,0 +1,8 @@
+{
+  "name": "ai-ngel-website",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=iife --minify --alias:three=./vendor/three.module.min.js --outfile=js/app.js"
+  },
+  "devDependencies": { "esbuild": "0.24.0" }
+}

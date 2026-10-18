@@ -17,7 +17,7 @@
 <link rel="preload" href="fonts/AlbertSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="vendor/phosphor/style.css">
 <link rel="stylesheet" href="css/style.css">
-<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -275,6 +275,8 @@
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
-<script type="module" src="js/main.js"></script>
+<script src="assets/face-mesh.js"></script>
+<script src="js/app.js" defer></script>
+<script>setTimeout(function(){if(!window.__aingelReady){document.querySelectorAll(".reveal").forEach(function(e){e.classList.add("in")})}},2500)</script>
 </body>
 </html>

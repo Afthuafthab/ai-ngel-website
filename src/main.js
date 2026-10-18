@@ -93,6 +93,7 @@ function form() {
   });
 }
 
+window.__aingelReady = true;
 reveals();
 form();
 startScene();
