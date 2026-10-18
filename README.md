@@ -20,7 +20,10 @@ Edit files in `src/`, then rebuild the bundle (one time: `npm install`):
 - `js/app.js`: the built bundle the page loads (commit it)
 - `assets/`: logo, app screenshots (demo data), `demo-cam.jpg` (AI-generated stand-in, not a real patient), `face-mesh.json` and `face-mesh.js` (478 MediaPipe landmarks computed on that picture)
 
-## Deploy (Netlify)
+## Deploy (Netlify), automatic
+Every push to `main` runs `.github/workflows/deploy.yml`, which publishes to https://ai-ngel.netlify.app (site id in `deploy.sh`; the Netlify token lives in the repo's GitHub secrets `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`). Manual deploy: `bash deploy.sh` (needs `netlify login` once).
+
+### Netlify
 Netlify serves the repo root (`netlify.toml`). The "Ask for a demo" form uses Netlify Forms, so it
 works with no backend; read submissions in the Netlify dashboard under Forms.
 
