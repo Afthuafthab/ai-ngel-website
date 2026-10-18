@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI.ngel | Your feedback</title>
+<meta name="description" content="Rate AI.ngel, tell us what to improve and suggest a feature. Takes one minute.">
+<meta name="theme-color" content="#060f24">
+<link rel="canonical" href="https://ai-ngel.live/feedback/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI.ngel | Your feedback">
+<meta property="og:description" content="Rate AI.ngel and tell us what to improve. One minute.">
+<meta property="og:image" content="https://ai-ngel.live/assets/og.jpg">
+<style>
+@font-face{font-family:"Albert Sans";src:url("../fonts/AlbertSans.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#060f24;--card:#0d1b3d;--line:#24376b;--ink:#f4f7ff;--mute:#aebfe6;--gold:#f0b94a;--blue:#3d8bff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Albert Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;font-size:18px;padding:0 16px 56px}
+main{max-width:620px;margin:0 auto}
+header{padding:28px 0 8px;display:flex;align-items:center;gap:12px}
+header img{width:44px;height:44px}
+header b{font-size:26px;font-weight:600}header b i{font-style:normal;color:var(--gold)}
+h1{font-size:34px;line-height:1.1;letter-spacing:-.02em;margin:14px 0 6px}
+.lead{color:var(--mute);margin-bottom:18px}
+section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 18px 20px;margin-top:14px}
+h2{font-size:21px;font-weight:700;margin-bottom:4px}
+.hint{font-size:15px;color:var(--mute);margin-bottom:12px}
+.stars{display:flex;gap:6px;justify-content:space-between}
+.stars button{flex:1;background:none;border:0;font-size:48px;line-height:1;color:#33487f;cursor:pointer;padding:6px 0;-webkit-tap-highlight-color:transparent}
+.stars button.on{color:var(--gold)}
+.stars button:focus-visible,.chip:focus-within{outline:3px solid var(--blue);outline-offset:2px;border-radius:12px}
+#word{min-height:24px;text-align:center;color:var(--gold);font-weight:600;margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer}
+.chip span{display:block;padding:12px 16px;border:2px solid var(--line);border-radius:999px;font-size:17px;font-weight:600;background:#08142f;min-height:48px}
+.chip input:checked+span{background:var(--gold);border-color:var(--gold);color:#07122b}
+textarea,input[type=text]{width:100%;margin-top:12px;background:#08142f;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:14px;font:inherit;font-size:17px}
+textarea{min-height:96px;resize:vertical}
+textarea:focus,input[type=text]:focus{outline:3px solid var(--blue);border-color:var(--blue)}
+.send{display:grid;gap:12px;margin-top:18px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;border-radius:16px;font:inherit;font-size:20px;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+.wa{background:#25d366;color:#05260f}
+.mail{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.note{font-size:14px;color:var(--mute);margin-top:12px;text-align:center}
+#msg{color:#ffb4b4;text-align:center;min-height:22px;margin-top:10px;font-weight:600}
+footer{margin-top:22px;text-align:center;color:var(--mute);font-size:15px}
+footer a{color:var(--gold)}
+</style>
+</head>
+<body>
+<main>
+<header><img src="../assets/logo.svg" alt=""><b>AI<i>.</i>ngel</b></header>
+<h1>Your feedback</h1>
+<p class="lead">One minute. Tap your answers. Typing is optional.</p>
+
+<section>
+<h2>1. How do you rate AI.ngel overall?</h2>
+<div class="stars" role="radiogroup" aria-label="Overall rating">
+<button type="button" role="radio" aria-checked="false" aria-label="1 star">&#9733;</button>
+<button type="button" role="radio" aria-checked="false" aria-label="2 stars">&#9733;</button>
+<button type="button" role="radio" aria-checked="false" aria-label="3 stars">&#9733;</button>
+<button type="button" role="radio" aria-checked="false" aria-label="4 stars">&#9733;</button>
+<button type="button" role="radio" aria-checked="false" aria-label="5 stars">&#9733;</button>
+</div>
+<div id="word" aria-live="polite"></div>
+</section>
+
+<section>
+<h2>2. What should we improve?</h2>
+<p class="hint">Tap all that apply.</p>
+<div class="chips" id="improve">
+<label class="chip"><input type="checkbox" value="Fewer false alarms"><span>Fewer false alarms</span></label>
+<label class="chip"><input type="checkbox" value="Faster alerts"><span>Faster alerts</span></label>
+<label class="chip"><input type="checkbox" value="App is easier to use"><span>App is easier to use</span></label>
+<label class="chip"><input type="checkbox" value="Camera view"><span>Camera view</span></label>
+<label class="chip"><input type="checkbox" value="Wristband vitals"><span>Wristband vitals</span></label>
+<label class="chip"><input type="checkbox" value="Easy setup"><span>Easy setup</span></label>
+<label class="chip"><input type="checkbox" value="Privacy and security"><span>Privacy and security</span></label>
+<label class="chip"><input type="checkbox" value="Price"><span>Price</span></label>
+<label class="chip"><input type="checkbox" value="Nothing, it is good"><span>Nothing, it is good</span></label>
+</div>
+</section>
+
+<section>
+<h2>3. Which new feature would you like?</h2>
+<p class="hint">Tap all that apply, or write your own idea.</p>
+<div class="chips" id="features">
+<label class="chip"><input type="checkbox" value="Medicine reminders"><span>Medicine reminders</span></label>
+<label class="chip"><input type="checkbox" value="Bed-exit alert"><span>Bed-exit alert</span></label>
+<label class="chip"><input type="checkbox" value="Fall detection"><span>Fall detection</span></label>
+<label class="chip"><input type="checkbox" value="Talk to the patient"><span>Talk to the patient</span></label>
+<label class="chip"><input type="checkbox" value="ECG, BP, sugar readings"><span>ECG, BP, sugar readings</span></label>
+<label class="chip"><input type="checkbox" value="Doctor video visit"><span>Doctor video visit</span></label>
+<label class="chip"><input type="checkbox" value="More languages"><span>More languages</span></label>
+<label class="chip"><input type="checkbox" value="Watch from abroad"><span>Watch from abroad</span></label>
+</div>
+<textarea id="idea" placeholder="Your own idea (optional)" aria-label="Your own idea"></textarea>
+</section>
+
+<section>
+<h2>4. Who are you? <span style="font-weight:500;color:var(--mute)">(optional)</span></h2>
+<input type="text" id="who" placeholder="Name or phone, so we can reply" autocomplete="name" aria-label="Name or phone">
+</section>
+
+<div class="send">
+<button class="btn wa" id="wa" type="button">Send on WhatsApp</button>
+<button class="btn mail" id="mail" type="button">Send by email</button>
+</div>
+<div id="msg" role="alert"></div>
+<p class="note">Your answers open in WhatsApp or your email app, ready to send. Tap Send there. Nothing is stored on this page.</p>
+<footer><a href="../">ai-ngel.live</a> &nbsp;&middot;&nbsp; Prototype for research demonstration</footer>
+</main>
+<script>
+(function(){
+  var words=["","Needs a lot of work","Could be better","Good","Very good","Excellent"];
+  var btns=[].slice.call(document.querySelectorAll(".stars button")),rating=0,msg=document.getElementById("msg");
+  function paint(){btns.forEach(function(b,i){b.classList.toggle("on",i<rating);b.setAttribute("aria-checked",String(i+1===rating))});document.getElementById("word").textContent=words[rating]}
+  btns.forEach(function(b,i){b.addEventListener("click",function(){rating=i+1;paint();msg.textContent=""})});
+  function picked(id){return [].slice.call(document.querySelectorAll("#"+id+" input:checked")).map(function(x){return x.value})}
+  function text(){
+    if(!rating){msg.textContent="Please tap the stars first (1 to 5).";return null}
+    var imp=picked("improve"),ft=picked("features"),idea=document.getElementById("idea").value.trim(),who=document.getElementById("who").value.trim();
+    return ["AI.ngel feedback","Rating: "+rating+"/5 ("+words[rating]+")","Improve: "+(imp.join(", ")||"-"),"New features: "+(ft.join(", ")||"-"),"My idea: "+(idea||"-"),"From: "+(who||"-")].join("\n");
+  }
+  document.getElementById("wa").addEventListener("click",function(){var t=text();if(t)location.href="https://wa.me/971522675335?text="+encodeURIComponent(t)});
+  document.getElementById("mail").addEventListener("click",function(){var t=text();if(t)location.href="mailto:info@architrone.com?subject="+encodeURIComponent("AI.ngel feedback ("+rating+"/5)")+"&body="+encodeURIComponent(t)});
+})();
+</script>
+</body>
+</html>
