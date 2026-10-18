@@ -102,11 +102,6 @@ footer a{color:var(--gold)}
 <textarea id="idea" placeholder="Your own idea (optional)" aria-label="Your own idea"></textarea>
 </section>
 
-<section>
-<h2>4. Who are you? <span style="font-weight:500;color:var(--mute)">(optional)</span></h2>
-<input type="text" id="who" placeholder="Name or phone, so we can reply" autocomplete="name" aria-label="Name or phone">
-</section>
-
 <div class="send">
 <button class="btn wa" id="wa" type="button">Send on WhatsApp</button>
 <button class="btn mail" id="mail" type="button">Send by email</button>
@@ -124,8 +119,8 @@ footer a{color:var(--gold)}
   function picked(id){return [].slice.call(document.querySelectorAll("#"+id+" input:checked")).map(function(x){return x.value})}
   function text(){
     if(!rating){msg.textContent="Please tap the stars first (1 to 5).";return null}
-    var imp=picked("improve"),ft=picked("features"),idea=document.getElementById("idea").value.trim(),who=document.getElementById("who").value.trim();
-    return ["AI.ngel feedback","Rating: "+rating+"/5 ("+words[rating]+")","Improve: "+(imp.join(", ")||"-"),"New features: "+(ft.join(", ")||"-"),"My idea: "+(idea||"-"),"From: "+(who||"-")].join("\n");
+    var imp=picked("improve"),ft=picked("features"),idea=document.getElementById("idea").value.trim();
+    return ["AI.ngel feedback","Rating: "+rating+"/5 ("+words[rating]+")","Improve: "+(imp.join(", ")||"-"),"New features: "+(ft.join(", ")||"-"),"My idea: "+(idea||"-")].join("\n");
   }
   document.getElementById("wa").addEventListener("click",function(){var t=text();if(t)location.href="https://wa.me/971522675335?text="+encodeURIComponent(t)});
   document.getElementById("mail").addEventListener("click",function(){var t=text();if(t)location.href="mailto:info@architrone.com?subject="+encodeURIComponent("AI.ngel feedback ("+rating+"/5)")+"&body="+encodeURIComponent(t)});
