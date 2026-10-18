@@ -64,37 +64,6 @@ function reveals() {
   els.forEach((e) => io.observe(e));
 }
 
-function form() {
-  const f = document.getElementById("demo-form");
-  const msg = document.getElementById("form-msg");
-  if (!f) return;
-  f.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    msg.className = "form-msg";
-    let ok = true;
-    f.querySelectorAll("[required]").forEach((inp) => {
-      const bad = !inp.value.trim();
-      inp.closest(".field").classList.toggle("bad", bad);
-      if (bad) ok = false;
-    });
-    if (!ok) { msg.textContent = "Please add your name and an email or phone number."; msg.classList.add("err"); return; }
-    msg.textContent = "Sending...";
-    try {
-      const body = new URLSearchParams(new FormData(f)).toString();
-      const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
-      if (!res.ok) throw new Error(String(res.status));
-      f.reset();
-      msg.textContent = "Thank you. We will email you a time for the demo.";
-      msg.classList.add("ok");
-    } catch {
-      msg.textContent = "That did not send. Please write to testarchitroneapp@gmail.com instead.";
-      msg.classList.add("err");
-    }
-  });
-}
-
-window.__aingelReady = true;
 reveals();
-form();
 startScene();
 initDemo({ reduced });

@@ -20,12 +20,12 @@ Edit files in `src/`, then rebuild the bundle (one time: `npm install`):
 - `js/app.js`: the built bundle the page loads (commit it)
 - `assets/`: logo, app screenshots (demo data), `demo-cam.jpg` (AI-generated stand-in, not a real patient), `face-mesh.json` and `face-mesh.js` (478 MediaPipe landmarks computed on that picture)
 
-## Deploy (Netlify), automatic
-Every push to `main` runs `.github/workflows/deploy.yml`, which publishes to https://ai-ngel.netlify.app (site id in `deploy.sh`; the Netlify token lives in the repo's GitHub secrets `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`). Manual deploy: `bash deploy.sh` (needs `netlify login` once).
-
-### Netlify
-Netlify serves the repo root (`netlify.toml`). The "Ask for a demo" form uses Netlify Forms, so it
-works with no backend; read submissions in the Netlify dashboard under Forms.
+## Hosting (GitHub Pages, free, no badge)
+The site is served by GitHub Pages straight from the `main` branch root, at https://ai-ngel.live (see `CNAME`).
+Every push to `main` publishes by itself. DNS for ai-ngel.live is managed in Netlify DNS (account Architrone):
+apex `A` records to GitHub Pages and `www` `CNAME` to `afthuafthab.github.io`.
+A Netlify copy still exists at https://ai-ngel.netlify.app (shows Netlify's free-plan badge; manual deploy with `bash deploy.sh`).
+Contact is WhatsApp and email links (no form handler needed).
 
 ## Honesty rules
 - AI.ngel is a prototype and not a diagnostic tool; keep that wording.
