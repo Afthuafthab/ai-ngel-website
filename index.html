@@ -49,7 +49,7 @@
     <a href="#doctor">Doctor care</a>
     <a href="#future">Coming next</a>
   </nav>
-  <a class="btn btn-solid" href="#demo">Ask for a demo</a>
+  <button type="button" class="btn btn-solid" data-interest>I'm interested</button>
 </header>
 
 <main id="main">
@@ -60,7 +60,7 @@
         <h1>Watches the patient. <span>Reports what matters.</span></h1>
         <p class="lede">An AI-based patient monitoring and alert eco-system for home and ward care, working 24/7.</p>
         <div class="cta-row">
-          <a class="btn btn-solid" href="#demo">Ask for a demo</a>
+          <button type="button" class="btn btn-solid" data-interest><i class="ph ph-hand-waving"></i><span>I'm interested</span></button>
           <a class="btn btn-ghost" href="#how">See how it works</a>
         </div>
       </div>
@@ -274,7 +274,8 @@
         <h2>See it working.</h2>
         <p>Tell us about the patient and who is caring for them. We will reply with a time for a live demo.</p>
         <div class="contact-actions">
-          <a class="btn btn-solid" href="https://wa.me/971522675335?text=Hello%2C%20I%20would%20like%20a%20live%20demo%20of%20AI.ngel." target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo"></i><span>Message on WhatsApp</span></a>
+          <button type="button" class="btn btn-solid" data-interest><i class="ph ph-hand-waving"></i><span>I'm interested</span></button>
+          <a class="btn btn-ghost" href="https://wa.me/971522675335?text=Hello%2C%20I%20would%20like%20a%20live%20demo%20of%20AI.ngel." target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo"></i><span>Message on WhatsApp</span></a>
           <a class="btn btn-ghost" href="mailto:info@architrone.com?subject=AI.ngel%20live%20demo"><i class="ph ph-envelope-simple"></i><span>Send an email</span></a>
         </div>
         <ul class="contact-list">
@@ -294,11 +295,31 @@
   </div>
 </footer>
 
+
+<dialog class="interest" id="interest" aria-labelledby="int-title">
+  <form method="dialog" id="int-form" novalidate>
+    <button type="button" class="int-x" data-close aria-label="Close">&times;</button>
+    <h2 id="int-title">I'm interested</h2>
+    <p class="int-sub">Leave your details and we will call or message you to arrange a live demo.</p>
+    <label>Your name<input type="text" name="name" autocomplete="name" required maxlength="80"></label>
+    <label>Phone or WhatsApp number<input type="tel" name="phone" autocomplete="tel" required maxlength="30" inputmode="tel"></label>
+    <label>Email <small>(optional)</small><input type="email" name="email" autocomplete="email" maxlength="120"></label>
+    <label>I am a
+      <select name="who"><option>Family caring for a patient</option><option>Hospital or clinic</option><option>Nurse or care company</option><option>Doctor</option><option>Other</option></select>
+    </label>
+    <label>Anything we should know <small>(optional)</small><textarea name="note" maxlength="400"></textarea></label>
+    <p class="int-consent">We use these details only to contact you about AI.ngel. We do not share them. Pressing the button opens WhatsApp with your message ready to send.</p>
+    <p class="int-msg" id="int-msg" role="status" aria-live="polite"></p>
+    <button type="submit" class="btn btn-solid" id="int-send"><i class="ph ph-whatsapp-logo"></i><span>Send my details</span></button>
+  </form>
+</dialog>
+
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="assets/face-mesh.js"></script>
 <script src="js/app.js" defer></script>
+<script src="js/interest.js" defer></script>
 <script>setTimeout(function(){if(!window.__aingelReady){document.querySelectorAll(".reveal").forEach(function(e){e.classList.add("in")})}},2500)</script>
 </body>
 </html>
